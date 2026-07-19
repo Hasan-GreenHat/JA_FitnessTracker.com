@@ -1,0 +1,549 @@
+/* ===========================
+   JA FITNESS JOURNAL
+   STYLE.CSS PART 1
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0d0d0d;
+    color:#ffffff;
+    line-height:1.6;
+}
+
+.container{
+    width:92%;
+    max-width:1300px;
+    margin:25px auto;
+}
+
+/* HEADER */
+
+.topbar{
+    background:linear-gradient(135deg,#111,#1a1a1a);
+    border-bottom:3px solid gold;
+    text-align:center;
+    padding:25px;
+    box-shadow:0 0 15px rgba(255,215,0,.2);
+}
+
+.topbar h1{
+    color:gold;
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.topbar p{
+    color:#d8d8d8;
+    font-size:16px;
+}
+
+/* CARDS */
+
+.card{
+    background:#171717;
+    border:1px solid #2c2c2c;
+    border-radius:18px;
+    padding:25px;
+    margin:25px 0;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:gold;
+}
+
+.card h2{
+    color:gold;
+    margin-bottom:20px;
+    font-size:25px;
+}
+
+/* DASHBOARD */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+}
+
+.box{
+    background:#101010;
+    border:1px solid #303030;
+    border-radius:15px;
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.box:hover{
+    border-color:gold;
+    transform:scale(1.03);
+}
+
+.box h3{
+    color:#bdbdbd;
+    font-size:15px;
+    margin-bottom:10px;
+}
+
+.box h2{
+    color:gold;
+    font-size:28px;
+}
+
+/* FORM */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#f2f2f2;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#242424;
+    color:#fff;
+    font-size:15px;
+    border:2px solid transparent;
+    transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:gold;
+}
+
+textarea{
+    resize:vertical;
+    min-height:90px;
+}
+
+::placeholder{
+    color:#9a9a9a;
+}
+
+
+/* ===========================
+   STYLE.CSS PART 2
+=========================== */
+
+/* BUTTONS */
+
+.center{
+    text-align:center;
+}
+
+button{
+    background:gold;
+    color:#111;
+    border:none;
+    padding:14px 28px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:700;
+    margin:10px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#ffd700;
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(255,215,0,.35);
+}
+
+#resetBtn{
+    background:#d32f2f;
+    color:#fff;
+}
+
+#resetBtn:hover{
+    background:#b71c1c;
+}
+
+/* CHECKBOXES */
+
+.check-grid,
+.habit-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:15px;
+    margin-top:15px;
+}
+
+.check-grid label,
+.habit-grid label{
+    background:#202020;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #333;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.check-grid label:hover,
+.habit-grid label:hover{
+    border-color:gold;
+}
+
+input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    margin-right:10px;
+}
+
+/* PROGRESS */
+
+.progress-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.progress-box{
+    background:#111;
+    border:1px solid #333;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.progress-box:hover{
+    border-color:gold;
+    transform:scale(1.03);
+}
+
+.progress-box h3{
+    color:#bdbdbd;
+    margin-bottom:10px;
+}
+
+.progress-box h1{
+    color:gold;
+    font-size:32px;
+}
+
+/* CHALLENGE */
+
+.challenge{
+    margin-top:20px;
+}
+
+.progress-bar{
+    width:100%;
+    height:28px;
+    background:#252525;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+#challengeProgress{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,gold,#ff9800);
+    transition:.5s;
+}
+
+#challengeText{
+    text-align:center;
+    margin-top:15px;
+    font-size:18px;
+    font-weight:600;
+}
+
+/* BADGES */
+
+.badge-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+}
+
+.badge{
+    background:#111;
+    border:2px solid gold;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.badge:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(255,215,0,.3);
+}
+
+/* PHOTO */
+
+#photoUpload{
+    margin:15px 0;
+}
+
+#photoPreview{
+    margin-top:20px;
+    min-height:220px;
+    border:2px dashed #444;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:#101010;
+}
+
+#photoPreview img{
+    width:100%;
+    max-height:450px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+
+/* ===========================
+   STYLE.CSS PART 3
+=========================== */
+
+/* NOTES */
+
+#notes{
+    min-height:180px;
+    font-size:15px;
+}
+
+/* CHART */
+
+#weightChart{
+    width:100%;
+    max-height:350px;
+    margin-top:25px;
+    background:#111;
+    border-radius:15px;
+    padding:10px;
+}
+
+/* BLOCKQUOTE */
+
+blockquote{
+    background:#101010;
+    border-left:5px solid gold;
+    padding:20px;
+    font-size:18px;
+    font-style:italic;
+    color:#f5f5f5;
+    border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:40px;
+    text-align:center;
+    padding:30px 20px;
+    border-top:2px solid gold;
+    color:#d6d6d6;
+}
+
+footer h3{
+    color:gold;
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+footer p{
+    margin:8px 0;
+    font-size:15px;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:gold;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ffb300;
+}
+
+/* ANIMATIONS */
+
+.card{
+    animation:fadeIn .6s ease;
+}
+
+.box,
+.progress-box,
+.badge{
+    animation:pop .5s ease;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes pop{
+
+0%{
+transform:scale(.95);
+opacity:0;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+.topbar h1{
+font-size:28px;
+}
+
+.card h2{
+font-size:22px;
+}
+
+.progress-box h1,
+.box h2{
+font-size:24px;
+}
+
+button{
+width:100%;
+margin:10px 0;
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+width:95%;
+}
+
+.dashboard-grid,
+.form-grid,
+.progress-grid,
+.badge-grid,
+.check-grid,
+.habit-grid{
+grid-template-columns:1fr;
+}
+
+.topbar{
+padding:20px;
+}
+
+.topbar h1{
+font-size:24px;
+}
+
+.card{
+padding:18px;
+}
+
+input,
+select,
+textarea{
+font-size:14px;
+}
+
+blockquote{
+font-size:16px;
+}
+
+}
+
+@media(max-width:480px){
+
+.topbar h1{
+font-size:22px;
+}
+
+.topbar p{
+font-size:13px;
+}
+
+.card h2{
+font-size:20px;
+}
+
+.box h2,
+.progress-box h1{
+font-size:22px;
+}
+
+.badge{
+font-size:16px;
+padding:15px;
+}
+
+footer h3{
+font-size:22px;
+}
+
+footer p{
+font-size:13px;
+}
+
+}
+
+/* IMAGE PREVIEW */
+
+#photoPreview img{
+display:block;
+margin:auto;
+border-radius:12px;
+box-shadow:0 0 20px rgba(255,215,0,.3);
+}
+
+/* END OF STYLE */
+

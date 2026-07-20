@@ -91,8 +91,8 @@ localStorage.getItem("userName") || "";
 document.getElementById("startWeight").value =
 START_WEIGHT;
 
-document.getElementById("goalWeight").value =
-GOAL_WEIGHT;
+document.getElementById("goalWeightDisplay").textContent =
+GOAL_WEIGHT + " Kg";
    
 if (journal.weight)
 weightInput.value = journal.weight;
@@ -134,8 +134,24 @@ loadJournal();
 
 function updateDashboard(){
 
+
+START_WEIGHT =
+parseFloat(document.getElementById("startWeight").value) || START_WEIGHT;
+
+GOAL_WEIGHT =
+parseFloat(document.getElementById("goalWeight").value) || GOAL_WEIGHT;
+
+document.getElementById("goalWeightDisplay").textContent =
+GOAL_WEIGHT + " Kg";
+
+document.getElementById("startWeightDisplay").textContent =
+START_WEIGHT + " Kg";
+
+   
 const current =
-parseFloat(weightInput.value) || START_WEIGHT;
+parseFloat(weightInput.value);
+
+if(isNaN(current)) return;
 
 const lost =
 (START_WEIGHT - current).toFixed(1);
@@ -173,6 +189,9 @@ percent + "%";
 challengeText.textContent =
 `Day ${challengeDay} / ${TOTAL_DAYS}`;
 
+document.getElementById("startWeightDisplay").textContent =
+START_WEIGHT + " Kg";
+   
 }
 
 // ---------- LIVE UPDATE ----------

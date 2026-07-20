@@ -90,6 +90,8 @@ localStorage.getItem("userName") || "";
 
 document.getElementById("startWeight").value =
 START_WEIGHT;
+   document.getElementById("goalWeight").value =
+GOAL_WEIGHT;
 
 document.getElementById("goalWeightDisplay").textContent =
 GOAL_WEIGHT + " Kg";
@@ -742,7 +744,7 @@ const currentWeightValue=
 parseFloat(weightInput.value)||99;
 
 if(
-99-currentWeightValue>=5
+START_WEIGHT-currentWeightValue>=5
 ){
 
 badges[4].style.background="gold";
@@ -751,7 +753,7 @@ badges[4].style.color="black";
 }
 
 if(
-currentWeightValue<=85
+currentWeightValue<=GOAL_WEIGHT
 ){
 
 badges[5].style.background="gold";
@@ -984,11 +986,6 @@ loadExtraFields();
 
 
 
-console.log(
-
-"Daily Score:",score+"%"
-
-);
 
 });
 
@@ -1019,12 +1016,16 @@ saveBtn.addEventListener("click", function () {
 
     saveJournal();
     saveExtraFields();
+    updateChallenge();
     updateDashboard();
     drawChart();
     checkAchievements();
 
-});
+    const score = calculateScore();
 
+    console.log("Daily Score:", score + "%");
+
+});
 
 
 

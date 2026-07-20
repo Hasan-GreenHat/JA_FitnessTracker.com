@@ -214,7 +214,7 @@ updateDashboard
 
 // ---------- SAVE JOURNAL ----------
 
-saveBtn.addEventListener("click", saveJournal);
+
 
 function saveJournal() {
 
@@ -593,11 +593,7 @@ if (savedPhoto) {
 
 // ---------- UPDATE CHART AFTER SAVE ----------
 
-saveBtn.addEventListener("click", () => {
 
-    drawChart();
-
-});
 
 // ---------- UPDATE DASHBOARD ----------
 
@@ -797,10 +793,7 @@ challengeText.textContent=
 
 }
 
-saveBtn.addEventListener(
-"click",
-updateChallenge
-);
+
 
 // ---------- AUTO WALK PLAN ----------
 
@@ -939,13 +932,7 @@ JSON.stringify(extra)
 
 }
 
-saveBtn.addEventListener(
 
-"click",
-
-saveExtraFields
-
-);
 
 // ---------- LOAD EXTRA FIELDS ----------
 
@@ -995,21 +982,7 @@ loadExtraFields();
 
 // ---------- FINAL SAVE ----------
 
-saveBtn.addEventListener("click",()=>{
 
-const score=calculateScore();
-
-updateDashboard();
-
-checkAchievements();
-
-drawChart();
-
-console.log(
-
-"Journal Saved Successfully"
-
-);
 
 console.log(
 
@@ -1038,4 +1011,22 @@ loadQuote();
 };
 
 console.log("🏋️ JA FITNESS JOURNAL LOADED SUCCESSFULLY");
+
+
+
+
+saveBtn.addEventListener("click", function () {
+
+    saveJournal();
+    saveExtraFields();
+    updateDashboard();
+    drawChart();
+    checkAchievements();
+
+});
+
+
+
+
+
 

@@ -38,8 +38,11 @@ document.getElementById("challengeText");
 
 // ---------- DEFAULTS ----------
 
-const START_WEIGHT = 99;
-const GOAL_WEIGHT = 85;
+let START_WEIGHT =
+parseFloat(localStorage.getItem("startWeight")) || 99;
+
+let GOAL_WEIGHT =
+parseFloat(localStorage.getItem("goalWeight")) || 85;
 const TOTAL_DAYS = 120;
 
 // ---------- STORAGE ----------
@@ -81,6 +84,16 @@ todayString;
 
 function loadJournal() {
 
+
+document.getElementById("userName").value =
+localStorage.getItem("userName") || "";
+
+document.getElementById("startWeight").value =
+START_WEIGHT;
+
+document.getElementById("goalWeight").value =
+GOAL_WEIGHT;
+   
 if (journal.weight)
 weightInput.value = journal.weight;
 
@@ -186,6 +199,26 @@ saveBtn.addEventListener("click", saveJournal);
 
 function saveJournal() {
 
+   START_WEIGHT =
+parseFloat(document.getElementById("startWeight").value);
+
+GOAL_WEIGHT =
+parseFloat(document.getElementById("goalWeight").value);
+
+localStorage.setItem(
+"startWeight",
+START_WEIGHT
+);
+
+localStorage.setItem(
+"goalWeight",
+GOAL_WEIGHT
+);
+
+localStorage.setItem(
+"userName",
+document.getElementById("userName").value
+);
     // Save form data
     journal = {
 
